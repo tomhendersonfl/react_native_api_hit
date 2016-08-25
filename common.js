@@ -25,7 +25,9 @@ module.exports = class deco extends Component {
     if (this.state.tip){
       return (
         <View style={styles.container}>
+          <Image source={{uri: this.state.tip_image}} style={{width: 200, height: 200}}/>
           <Text>Tip of the day : {this.state.tip} </Text>
+          <MyButton onPress={() => {this.getTip()}} customText="Get another tip" />
         </View>
       )
     } else {
